@@ -4,18 +4,18 @@ import com.jme3.texture.Texture2D;
 
 public class ATMS {
 
-    public Layer[] frames;
+    public GameShopLayer[] frames;
 
 
-    public ATMS(byte amountFrames, Layer... layers){
+    public ATMS(byte amountFrames, GameShopLayer... layers){
 
-        frames = new Layer[amountFrames];
+        frames = new GameShopLayer[amountFrames];
         frames = layers;
     }
 
     public void changeColor (ColorRGBA colorFrom, ColorRGBA colorTo){
 
-        for (Layer frame: frames){
+        for (GameShopLayer frame: frames){
             for (short y = 0; y < frame.height; y++){
 
                 for (short x = 0; x < frame.width; x++){

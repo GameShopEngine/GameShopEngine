@@ -89,7 +89,7 @@ public class SimpleMesh {
     }
     
        public Texture2D makeTexture(String side){
-        Layer layer= new Layer((short) 128, (short) 128);
+        GameShopLayer layer= new GameShopLayer((short) 128, (short) 128);
         layer.drawCircle((short) 63, (short) 63, (short) 128, ColorRGBA.fromRGBA255(255,215,175,255));
 
         //DRILL COLOR CODE

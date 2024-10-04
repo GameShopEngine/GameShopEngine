@@ -49,13 +49,13 @@ public class Main extends SimpleApplication {
         CurrencyMesh[] cms = new CurrencyMesh[n];
         for (int i = 0; i < n; i++){
           byte depth = 16;
-          CurrencyLine[] cl = new CurrencyLine[4];
-          cl = new CurrencyLine[]{
+          GameShopCurrencyLine[] cl = new GameShopCurrencyLine[4];
+          cl = new GameShopCurrencyLine[]{
           
-              new CurrencyLine(new Vector3f[]{new Vector3f(0,0,-i), new Vector3f(.33f, 0, -i), new Vector3f(.66f,0,-i), new Vector3f(1, 0, -i)}, depth),
-              new CurrencyLine(new Vector3f[]{new Vector3f(0,.33f,-i), new Vector3f(.33f, .33f, -i), new Vector3f(.66f,.33f,-i), new Vector3f(1, .33f, -i)}, depth),
-              new CurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
-              new CurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth)
+              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,0,-i), new Vector3f(.33f, 0, -i), new Vector3f(.66f,0,-i), new Vector3f(1, 0, -i)}, depth),
+              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.33f,-i), new Vector3f(.33f, .33f, -i), new Vector3f(.66f,.33f,-i), new Vector3f(1, .33f, -i)}, depth),
+              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
+              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth)
           };
           
           cms[i] = new CurrencyMesh(this, cl, makeTexture("front"),this.getRootNode());
@@ -75,7 +75,7 @@ public class Main extends SimpleApplication {
     }
     
        public Texture2D makeTexture(String side){
-        Layer layer= new Layer((short) 128, (short) 128);
+        GameShopLayer layer= new GameShopLayer((short) 128, (short) 128);
         layer.drawCircle((short) 63, (short) 63, (short) 63, ColorRGBA.fromRGBA255(255,215,175,255));
 
         //DRILL COLOR CODE

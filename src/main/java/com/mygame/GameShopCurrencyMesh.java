@@ -10,9 +10,18 @@ import com.jme3.texture.Texture2D;
 
 /**
  *
- * @author chrx
+ * @author lyndenjayevans
  */
 public class GameShopCurrencyMesh {
     
-    //public GameShopCurrencyMeshSimpleApplication app, CurrencyLine[] currencyLines, Texture2D texture, Node node
+    int skip;
+    
+    public GameShopCurrencyMesh(SimpleApplication app, GameShopCurrencyLine[] currencyLines, GameShopATMS atms, Node node){
+    
+        if (currencyLines.length % 4 == 0){
+        
+            skip = currencyLines.length / 4;
+        }
+            
+    }
 }

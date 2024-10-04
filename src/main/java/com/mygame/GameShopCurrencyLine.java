@@ -3,13 +3,13 @@ package com.mygame;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 
-public class CurrencyLine {
+public class GameShopCurrencyLine {
 
     public Vector3f[] points;
     public Vector3f[] infinitesimals;
 
     byte numPoints;
-    public CurrencyLine(Vector3f[] points, byte numPoints){
+    public GameShopCurrencyLine(Vector3f[] points, byte numPoints){
 
         this.numPoints = numPoints;
 

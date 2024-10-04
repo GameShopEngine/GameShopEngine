@@ -9,14 +9,14 @@ import com.jme3.math.Vector3f;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Layer {
+public class GameShopLayer {
 
     public byte[][] layer;
 
     public short width;
     public short height;
     //512 x 512 [recommended]
-    public Layer(short width, short height){
+    public GameShopLayer(short width, short height){
 
         layer = new byte[height][width * 4];
 
@@ -99,7 +99,7 @@ public class Layer {
         return output;
     }
 
-    public void drawCurrencyLine(CurrencyLine cl, short radius, ColorRGBA color){
+    public void drawCurrencyLine(GameShopCurrencyLine cl, short radius, ColorRGBA color){
 
         //int i = 0;
         for (int i = 0; i < cl.infinitesimals.length - 1; i++){

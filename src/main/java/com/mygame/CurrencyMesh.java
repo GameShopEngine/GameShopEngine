@@ -12,10 +12,10 @@ import com.jme3.util.BufferUtils;
 import java.nio.ByteBuffer;
 public class CurrencyMesh {
 
-    public CurrencyLine[] vInfinitesimals;
+    public GameShopCurrencyLine[] vInfinitesimals;
     public SimpleMesh[] simpleMeshes;
 
-    public CurrencyLine[] currencyLines;
+    public GameShopCurrencyLine[] currencyLines;
     public float width;
     public float height;
 
@@ -26,7 +26,7 @@ public class CurrencyMesh {
     Texture2D texture;
     Node node;
 
-    public CurrencyMesh(SimpleApplication app, CurrencyLine[] currencyLines, Texture2D texture, Node node){
+    public CurrencyMesh(SimpleApplication app, GameShopCurrencyLine[] currencyLines, Texture2D texture, Node node){
 
         this.app = app;
         this.currencyLines = currencyLines;
@@ -106,11 +106,11 @@ public class CurrencyMesh {
 
         width = currencyLines[0].points[currencyLines[0].points.length - 1].x - currencyLines[0].points[0].x;
         height = currencyLines[currencyLines.length - 1].points[0].y - currencyLines[0].points[0].y;
-        this.vInfinitesimals = new CurrencyLine[currencyLines[0].infinitesimals.length];
+        this.vInfinitesimals = new GameShopCurrencyLine[currencyLines[0].infinitesimals.length];
 
         for (int i = 0; i < this.vInfinitesimals.length; i++){
 
-            this.vInfinitesimals[i] = new CurrencyLine(new Vector3f[]{currencyLines[0].infinitesimals[i], currencyLines[1].infinitesimals[i], currencyLines[2].infinitesimals[i], currencyLines[3].infinitesimals[i]}, (byte)16);
+            this.vInfinitesimals[i] = new GameShopCurrencyLine(new Vector3f[]{currencyLines[0].infinitesimals[i], currencyLines[1].infinitesimals[i], currencyLines[2].infinitesimals[i], currencyLines[3].infinitesimals[i]}, (byte)16);
 
         }
     }
