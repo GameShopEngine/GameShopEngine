@@ -4,6 +4,7 @@ import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
+import com.jme3.math.Vector4f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
@@ -12,6 +13,7 @@ import com.jme3.texture.Texture2D;
 import com.jme3.texture.image.ColorSpace;
 import com.jme3.util.BufferUtils;
 import java.nio.ByteBuffer;
+import jme3tools.optimize.GeometryBatchFactory;
 
 /**
  * This is the Main Class of your Game. You should only do initialization here.
@@ -28,13 +30,7 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         
-         long maxMemory = Runtime.getRuntime().maxMemory();
-                long allocatedMemory = Runtime.getRuntime().totalMemory();
-                long freeMemory = Runtime.getRuntime().freeMemory();
-                
-                System.out.println("max: " + maxMemory);
-                System.out.println("allocated: " + allocatedMemory);
-                System.out.println("free: " + freeMemory);
+         
 //        Box b = new Box(1, 1, 1);
 //        Geometry geom = new Geometry("Box", b);
 //
@@ -44,11 +40,12 @@ public class Main extends SimpleApplication {
 //
 //        rootNode.attachChild(geom);
 
-
+//
+        this.viewPort.setBackgroundColor(ColorRGBA.White);
         int n = 1;
-        CurrencyMesh[] cms = new CurrencyMesh[n];
+        GameShopCurrencyMesh[] cms = new GameShopCurrencyMesh[n];
         for (int i = 0; i < n; i++){
-          byte depth = 16;
+          byte depth = 2;
           GameShopCurrencyLine[] cl = new GameShopCurrencyLine[4];
           cl = new GameShopCurrencyLine[]{
           
@@ -58,10 +55,36 @@ public class Main extends SimpleApplication {
               new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth)
           };
           
-          cms[i] = new CurrencyMesh(this, cl, makeTexture("front"),this.getRootNode());
+          cms[i] = new GameShopCurrencyMesh(this, cl, new GameShopATMS(new GameShopLayer[]{ new GameShopLayer((short)128,(short)128)}, new Vector4f[]{new Vector4f(1,1,1,1)}),this.getRootNode());
           //SimpleMesh sm = new SimpleMesh(this, new Vector3f[]{}, new Vector2f[]{}, makeTexture(), this.getRootNode());
         }
-
+//        
+//        int n = 200;
+//        CurrencyMesh[] cms = new CurrencyMesh[n];
+//        for (int i = 0; i < n; i++){
+//          byte depth = 16;
+//          GameShopCurrencyLine[] cl = new GameShopCurrencyLine[4];
+//          cl = new GameShopCurrencyLine[]{
+//          
+//              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,0,-i), new Vector3f(.33f, 0, -i), new Vector3f(.66f,0,-i), new Vector3f(1, 0, -i)}, depth),
+//              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.33f,-i), new Vector3f(.33f, .33f, -i), new Vector3f(.66f,.33f,-i), new Vector3f(1, .33f, -i)}, depth),
+//              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
+//              new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth)
+//          };
+//          
+//          cms[i] = new CurrencyMesh(this, cl, makeTexture(""),this.getRootNode());
+//          //SimpleMesh sm = new SimpleMesh(this, new Vector3f[]{}, new Vector2f[]{}, makeTexture(), this.getRootNode());
+//        }
+//
+//         GeometryBatchFactory.optimize(getRootNode());
+         
+         long maxMemory = Runtime.getRuntime().maxMemory();
+                long allocatedMemory = Runtime.getRuntime().totalMemory();
+                long freeMemory = Runtime.getRuntime().freeMemory();
+                
+                System.out.println("max: " + maxMemory);
+                System.out.println("allocated: " + allocatedMemory);
+                System.out.println("free: " + freeMemory);
     }
 
     @Override
