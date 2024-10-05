@@ -15,13 +15,24 @@ import com.jme3.texture.Texture2D;
 public class GameShopCurrencyMesh {
     
     int skip;
+    SimpleApplication app;
+    GameShopCurrencyLine[] currencyLines;
+    GameShopATMS atms;
+    Node node;
     
+    //There should be sets of 4 CurrencyLines.... example 4 8 12 etc...
     public GameShopCurrencyMesh(SimpleApplication app, GameShopCurrencyLine[] currencyLines, GameShopATMS atms, Node node){
     
+        assert(currencyLines.length % 4 == 0);
         if (currencyLines.length % 4 == 0){
         
             skip = currencyLines.length / 4;
-        }
+        }  
+        
+        this.app = app;
+        this.currencyLines = currencyLines;
+        this.atms = atms;
+        this.node = node;
             
     }
 }

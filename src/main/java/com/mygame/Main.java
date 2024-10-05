@@ -45,7 +45,7 @@ public class Main extends SimpleApplication {
 //        rootNode.attachChild(geom);
 
 
-        int n = 20;
+        int n = 1;
         CurrencyMesh[] cms = new CurrencyMesh[n];
         for (int i = 0; i < n; i++){
           byte depth = 16;
