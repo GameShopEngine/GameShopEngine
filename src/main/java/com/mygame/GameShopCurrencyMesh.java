@@ -337,7 +337,7 @@ for (int j = 0; j < indices.length; j++) {
 
         Material mat = new Material(app.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");
         mat.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
-
+        mat.getAdditionalRenderState().setBlendMode(RenderState.BlendMode.Alpha);
         // mat.setColor("Color", ColorRGBA.fromRGBA255(255,255,255,255));
         mat.setTexture("ColorMap", makeTexture(""));
         geom.setMaterial(mat);
