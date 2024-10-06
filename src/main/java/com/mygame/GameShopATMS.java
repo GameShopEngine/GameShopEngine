@@ -15,12 +15,14 @@ public class GameShopATMS {
     
     
     public GameShopLayer[] frames;
-
+    public Vector4f[] textureSamples;
 
     public GameShopATMS(GameShopLayer[] layers, Vector4f[] textureSamples){
 
         frames = new GameShopLayer[layers.length];
         frames = layers;
+        this.textureSamples = new Vector4f[textureSamples.length];
+        this.textureSamples = textureSamples;
     }
 
     public void changeColor (ColorRGBA colorFrom, ColorRGBA colorTo){

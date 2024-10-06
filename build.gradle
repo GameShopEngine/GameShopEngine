@@ -32,6 +32,19 @@ task runApp(type: JavaExec) {
   //args 'appArg1'
 }
 
+
+task runJar(type: JavaExec) {
+    group = 'application'
+    description = 'Runs the JAR file'
+    classpath = sourceSets.main.runtimeClasspath//files(tasks.jar.outputs.files)
+    mainClass = 'com.mygame.Main'
+    
+    List<String> argumentList = new ArrayList<String>();
+    argumentList.add('-Xms12288m')
+    argumentList.add('-Xmx14336m')
+    allJvmArgs = argumentList
+}
+
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
