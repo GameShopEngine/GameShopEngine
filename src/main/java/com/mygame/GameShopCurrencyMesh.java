@@ -102,19 +102,14 @@ public class GameShopCurrencyMesh {
     
     public void setIndicesVertical(){
        int totalIndices = 0;
-        //int j = 0;
+ 
         for (GameShopCurrencyLine gscl : vInfinitesimals){
         
             for (Vector3f v: gscl.infinitesimals){
-//            if (j > 0 && j % gscl.numPoints == 0) {
-//            
-//                j = 0;
-//               // continue;
-//            } else {
+ 
             
                 totalIndices += 6;
-               // j++;
-            //}
+              
             }
         }
         
@@ -127,12 +122,7 @@ public class GameShopCurrencyMesh {
         for (int index = 0; index < indices.length; index += 6){
         
             if (l > 0 && l % (vInfinitesimals[line].numPoints) == 0) {
-            
-//                index-=6;
-//                //i++;
-//                l = 0;
-
-           // i++;
+ 
            
             indices[index] =  0;
             indices[index + 1] = 0;
@@ -141,7 +131,6 @@ public class GameShopCurrencyMesh {
             indices[index + 4] = 0;
             indices[index + 5] = 0;
             l = 0;
-            //i++;
             continue;
             } else {
             indices[index] =  (short) (i + vInfinitesimals[line].numPoints + 1);
@@ -158,71 +147,14 @@ public class GameShopCurrencyMesh {
             
             i++;
             l++;
-           // l++;
-            //index = Short.valueOf((short)0);
-            //for (GameShopCurrencyLine gscl: currencyLines){
-            //{2, 0, 1, 1, 3, 2};
-//                if (i == 0){
-//                
-//                    indices[index] =  (short) (i + currencyLines[line].infinitesimals.length);
-//                    i++;
-//                     
-//                } else {
-//                
-//                    if ((i + 1) % 6 == 0){
-//                    
-//                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length);
-//                        i-=5;
-//                         
-//                        
-//                    } else if ((i + 1) % 5 == 0) {
-//                    
-//                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length + 1);
-//                        i++;
-//                        
-//                    
-//                    } else if ((i + 1) % 4 == 0) {
-//                    
-//                        indices[index] = (short) (i + 1);
-//                        i++;
-//                         
-//                        
-//                    } else if ((i + 1) % 3 == 0) {
-//                    
-//                        
-//                        indices[index] = (short) (i + 1);
-//                        i++;
-//                         
-//                        
-//                    } else if ((i + 1) % 2 == 0) {
-//                    
-//                        indices[index] = (short) i;
-//                        i++;
-//                        
-//                        
-//                    } else {
-//                    
-//                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length);
-//                        i++;
-//                         
-//                    }
-//                }
-          //  }
+           
             
         if (i % (vInfinitesimals[line].infinitesimals.length * vInfinitesimals[line].infinitesimals.length) == 0) {
         
             line++;
         }
         }
-        
-        
-        //short[] indexes = {1, 2, 3, 4, 5};
-
-//Short[] indexes = new Short[indices.length];
-//
-//for (int j = 0; j < indices.length; j++) {
-//    indexes[j] = indices[j]; // Autoboxing
-//}
+   
           System.out.println(indices.length);
           System.out.println(Arrays.asList(indices));
         
@@ -249,374 +181,14 @@ public class GameShopCurrencyMesh {
             texCoord[v] = new Vector2f((float)(((float)y)), ((float)i/(float)vInfinitesimals[lines].numPoints));
             i++;
            
-//               if (i == 0){
-//            
-//                texCoord[v] = new Vector2f(0,0);
-//                i++;
-//                 
-//            } else {
-//                if ((i + 1) % 4 == 0) {
-//                 texCoord[v] = new Vector2f(1,0);
-//                i++;
-//                } else
-
-
-
-
-            //****START
-//            switch (i) {
-//                case 2 -> {
-//                    texCoord[v] = new Vector2f(1f,y);
-//                    y+=.33f;
-//                    i = 0;
-//                    if (y > 1f){
-//                    
-//                        y = 0f;
-//                    }
-//                }
-//                case 1 -> {
-//                    texCoord[v] = new Vector2f(.5f,y);
-//                    i++;
-//                }
-//                default -> {
-//                    texCoord[v] = new Vector2f(0,y);
-//                    i++;
-//                }
-//            }
-            //****END
-            
-            
-            
-            
-            
-            // }
-//             if (i == 0){
-//            
-//                texCoord[v] = new Vector2f(0,0);
-//                i++;
-//                 
-//            } else {
-//            
-////                if ((i + 1) % 4 == 0) {
-////                 texCoord[v] = new Vector2f(1,0);
-////                i++;
-////                } else
-//                    
-//                if ((i + 1) % 3 == 0) {
-//                 texCoord[v] = new Vector2f(1f,y);
-//                 y+=.33f;
-//                i++;
-//                } else if ((i + 1) % 2 == 0) {
-//                 texCoord[v] = new Vector2f(.5f,y);
-//                i++;
-//                } else {
-//                 texCoord[v] = new Vector2f(0,y);
-//                i++;
-//                } 
-//            }
-//            if (i == 0){
-//            
-//                texCoord[v] = new Vector2f(0,0);
-//                i++;
-//                 
-//            } else {
-//            
-//                if ((i + 1) % 4 == 0) {
-//                 texCoord[v] = new Vector2f(1,1);
-//                i++;
-//                } else if ((i + 1) % 3 == 0) {
-//                 texCoord[v] = new Vector2f(0,1);
-//                i++;
-//                } else if ((i + 1) % 2 == 0) {
-//                 texCoord[v] = new Vector2f(1,0);
-//                i++;
-//                } else {
-//                 texCoord[v] = new Vector2f(0,0);
-//                i++;
-//                } 
-//            }
+ 
                     }
         
           System.out.println(texCoord.length);
           System.out.println(Arrays.asList(texCoord));
         
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
-//    public void setVertices(){
-//     
-//          int totalVertices = 0;
-//          
-//          for (GameShopCurrencyLine gscl: currencyLines){
-//          
-//              totalVertices += gscl.infinitesimals.length;
-//          }
-//          
-//          this.vertices = new Vector3f[totalVertices];
-//          
-//          int i = 0;
-//          for (GameShopCurrencyLine gscl: currencyLines){
-//           
-//              for (Vector3f v: gscl.infinitesimals){
-//              
-//                  this.vertices[i] = new Vector3f(v);
-//                  i++;
-//              }
-//          }
-//          
-//          System.out.println(vertices.length);
-//          System.out.println(Arrays.asList(vertices));
-//    }
-//    
-//    public void setIndices(){
-//    
-//        int totalIndices = 0;
-//        //int j = 0;
-//        for (GameShopCurrencyLine gscl : currencyLines){
-//        
-//            for (Vector3f v: gscl.infinitesimals){
-////            if (j > 0 && j % gscl.numPoints == 0) {
-////            
-////                j = 0;
-////               // continue;
-////            } else {
-//            
-//                totalIndices += 6;
-//               // j++;
-//            //}
-//            }
-//        }
-//        
-//        System.out.println("totalIndices: " + totalIndices);
-//        indices = new Short[totalIndices];
-//        
-//        int i = 0;
-//        int line = 0;
-//        int l = 0;
-//        for (int index = 0; index < indices.length; index += 6){
-//        
-//            if (l > 0 && l % (currencyLines[line].numPoints) == 0) {
-//            
-////                index-=6;
-////                //i++;
-////                l = 0;
-//
-//           // i++;
-//           
-//            indices[index] =  0;
-//            indices[index + 1] = 0;
-//            indices[index + 2] = 0;
-//            indices[index + 3] = 0;
-//            indices[index + 4] = 0;
-//            indices[index + 5] = 0;
-//            l = 0;
-//            //i++;
-//            continue;
-//            } else {
-//            indices[index] =  (short) (i + currencyLines[line].numPoints + 1);
-//            indices[index + 1] = (short)i;
-//            indices[index + 2] = (short)(i + 1);
-//            indices[index + 3] = (short)(i + 1);
-//            indices[index + 4] = (short)(i + currencyLines[line].numPoints + 2);
-//            indices[index + 5] = (short)(i + currencyLines[line].numPoints + 1);
-//            
-//            
-//            
-//            //i++;
-//            }
-//            
-//            i++;
-//            l++;
-//           // l++;
-//            //index = Short.valueOf((short)0);
-//            //for (GameShopCurrencyLine gscl: currencyLines){
-//            //{2, 0, 1, 1, 3, 2};
-////                if (i == 0){
-////                
-////                    indices[index] =  (short) (i + currencyLines[line].infinitesimals.length);
-////                    i++;
-////                     
-////                } else {
-////                
-////                    if ((i + 1) % 6 == 0){
-////                    
-////                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length);
-////                        i-=5;
-////                         
-////                        
-////                    } else if ((i + 1) % 5 == 0) {
-////                    
-////                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length + 1);
-////                        i++;
-////                        
-////                    
-////                    } else if ((i + 1) % 4 == 0) {
-////                    
-////                        indices[index] = (short) (i + 1);
-////                        i++;
-////                         
-////                        
-////                    } else if ((i + 1) % 3 == 0) {
-////                    
-////                        
-////                        indices[index] = (short) (i + 1);
-////                        i++;
-////                         
-////                        
-////                    } else if ((i + 1) % 2 == 0) {
-////                    
-////                        indices[index] = (short) i;
-////                        i++;
-////                        
-////                        
-////                    } else {
-////                    
-////                        indices[index] = (short) (i + currencyLines[line].infinitesimals.length);
-////                        i++;
-////                         
-////                    }
-////                }
-//          //  }
-//            
-//        if (i % (currencyLines[line].infinitesimals.length * currencyLines[line].infinitesimals.length) == 0) {
-//        
-//            line++;
-//        }
-//        }
-//        
-//        
-//        //short[] indexes = {1, 2, 3, 4, 5};
-//
-////Short[] indexes = new Short[indices.length];
-////
-////for (int j = 0; j < indices.length; j++) {
-////    indexes[j] = indices[j]; // Autoboxing
-////}
-//          System.out.println(indices.length);
-//          System.out.println(Arrays.asList(indices));
-//        
-//    }
-//    
-//    public void setTexCoords(){
-//    
-//        this.texCoord = new Vector2f[this.vertices.length];
-//        
-//        int maxLines = currencyLines.length;
-//        int lines = 0;
-//        
-//        
-//        int i = 0;
-//        float y = 0;
-//        int slice = 0;
-//        for (int v = 0; v < texCoord.length; v++){
-//        
-//             if (i > currencyLines[lines].numPoints) {
-//            
-//                i = 0;
-//                y+= .33f;
-//            }
-//            texCoord[v] = new Vector2f((float)((float)i/(float)currencyLines[lines].numPoints), y);
-//            i++;
-//           
-////               if (i == 0){
-////            
-////                texCoord[v] = new Vector2f(0,0);
-////                i++;
-////                 
-////            } else {
-////                if ((i + 1) % 4 == 0) {
-////                 texCoord[v] = new Vector2f(1,0);
-////                i++;
-////                } else
-//
-//
-//
-//
-//            //****START
-////            switch (i) {
-////                case 2 -> {
-////                    texCoord[v] = new Vector2f(1f,y);
-////                    y+=.33f;
-////                    i = 0;
-////                    if (y > 1f){
-////                    
-////                        y = 0f;
-////                    }
-////                }
-////                case 1 -> {
-////                    texCoord[v] = new Vector2f(.5f,y);
-////                    i++;
-////                }
-////                default -> {
-////                    texCoord[v] = new Vector2f(0,y);
-////                    i++;
-////                }
-////            }
-//            //****END
-//            
-//            
-//            
-//            
-//            
-//            // }
-////             if (i == 0){
-////            
-////                texCoord[v] = new Vector2f(0,0);
-////                i++;
-////                 
-////            } else {
-////            
-//////                if ((i + 1) % 4 == 0) {
-//////                 texCoord[v] = new Vector2f(1,0);
-//////                i++;
-//////                } else
-////                    
-////                if ((i + 1) % 3 == 0) {
-////                 texCoord[v] = new Vector2f(1f,y);
-////                 y+=.33f;
-////                i++;
-////                } else if ((i + 1) % 2 == 0) {
-////                 texCoord[v] = new Vector2f(.5f,y);
-////                i++;
-////                } else {
-////                 texCoord[v] = new Vector2f(0,y);
-////                i++;
-////                } 
-////            }
-////            if (i == 0){
-////            
-////                texCoord[v] = new Vector2f(0,0);
-////                i++;
-////                 
-////            } else {
-////            
-////                if ((i + 1) % 4 == 0) {
-////                 texCoord[v] = new Vector2f(1,1);
-////                i++;
-////                } else if ((i + 1) % 3 == 0) {
-////                 texCoord[v] = new Vector2f(0,1);
-////                i++;
-////                } else if ((i + 1) % 2 == 0) {
-////                 texCoord[v] = new Vector2f(1,0);
-////                i++;
-////                } else {
-////                 texCoord[v] = new Vector2f(0,0);
-////                i++;
-////                } 
-////            }
-//                    }
-//        
-//          System.out.println(texCoord.length);
-//          System.out.println(Arrays.asList(texCoord));
-//        
-//    }
+     
     
     public void setBuffers(){
     
@@ -663,31 +235,54 @@ for (int j = 0; j < indices.length; j++) {
     public void makeVerticalLines(){
 //     this.dim = 3;
 //
-        width = (currencyLines[0].points[currencyLines[0].points.length - 1].x - currencyLines[0].points[0].x);
-        height = (currencyLines[currencyLines.length - 1].points[0].y - currencyLines[0].points[0].y);
+        //width = (currencyLines[0].points[currencyLines[0].points.length - 1].x - currencyLines[0].points[0].x);
+        //height = (currencyLines[currencyLines.length - 1].points[0].y - currencyLines[0].points[0].y);
        // this.vInfinitesimals = new GameShopPolyLine[((polyLines[0].numPoints - 2) * 2) + 2];//[polyLines[0].infinitesimals.length];
-        this.vInfinitesimals = new GameShopCurrencyLine[(currencyLines[0].infinitesimals.length)];//[polyLines[0].infinitesimals.length];
-
-//        System.out.println(width);
-//        System.out.println(height);
+       
+       int totalInfinitesimals = 0;
+       System.out.println("cl inf " + currencyLines[0].infinitesimals.length);
+       for (int lines = 0; lines < currencyLines.length; lines += 4){
+       
+           totalInfinitesimals += currencyLines[lines].infinitesimals.length;
+           
+       }
+       
+       
+       this.vInfinitesimals = new GameShopCurrencyLine[totalInfinitesimals];//new GameShopCurrencyLine[(currencyLines[0].infinitesimals.length)];//[polyLines[0].infinitesimals.length];
+ 
         System.out.println("vInfinitesimals " + this.vInfinitesimals.length);
-        for (int i = 0; i < this.vInfinitesimals.length;  i++){
-
-//            if(i == 0){
-//             this.vInfinitesimals[i] = new GameShopPolyLine(new Vector3f[]{polyLines[0].infinitesimals[i], polyLines[1].infinitesimals[i], polyLines[2].infinitesimals[i], polyLines[3].infinitesimals[i]}, polyLines[0].infinitesimals.length);
-//          
-//            } else if (i == (this.vInfinitesimals.length - 1)){
-//             this.vInfinitesimals[i] = new GameShopPolyLine(new Vector3f[]{polyLines[0].infinitesimals[i], polyLines[1].infinitesimals[i], polyLines[2].infinitesimals[i], polyLines[3].infinitesimals[i]}, polyLines[0].infinitesimals.length);
-//          
-//            } else {
-//            this.vInfinitesimals[i] = new GameShopPolyLine(new Vector3f[]{polyLines[0].infinitesimals[i], polyLines[1].infinitesimals[i], polyLines[2].infinitesimals[i], polyLines[3].infinitesimals[i]}, polyLines[0].infinitesimals.length);
-//            this.vInfinitesimals[i + 1] = new GameShopPolyLine(new Vector3f[]{polyLines[0].infinitesimals[i], polyLines[1].infinitesimals[i], polyLines[2].infinitesimals[i], polyLines[3].infinitesimals[i]}, polyLines[0].infinitesimals.length);
-//          i++;
-//                
-           //s }
-            this.vInfinitesimals[i] = new GameShopCurrencyLine(new Vector3f[]{currencyLines[0].infinitesimals[i], currencyLines[1].infinitesimals[i], currencyLines[2].infinitesimals[i], currencyLines[3].infinitesimals[i]}, (byte) currencyLines[0].infinitesimals.length);
-            //System.out.println(i);
+        
+        int j = 0;
+        int i = 0;
+        int total = 0;
+        for (GameShopCurrencyLine vi: this.vInfinitesimals){
+        
+             if (i == 3){
+            
+                i = 0;
+                j+=4;
+            }
+            // System.out.println();
+            this.vInfinitesimals[total] = new GameShopCurrencyLine(new Vector3f[]{currencyLines[j].infinitesimals[i], currencyLines[j + 1].infinitesimals[i], currencyLines[j + 2].infinitesimals[i], currencyLines[j + 3].infinitesimals[i]}, (byte) currencyLines[j].infinitesimals.length);
+        
+            i++;
+           total++;
         }
+        //System.out.println(total);
+        
+       // System.out.println(Arrays.asList(this.vInfinitesimals[0].infinitesimals));
+        //System.out.println(j);
+        
+        //int j = 0;
+        //for (int i = 0; i < this.vInfinitesimals.length;  i++){
+
+ 
+//            this.vInfinitesimals[i] = new GameShopCurrencyLine(new Vector3f[]{currencyLines[j].infinitesimals[i], currencyLines[j + 1].infinitesimals[i], currencyLines[j + 2].infinitesimals[i], currencyLines[j + 3].infinitesimals[i]}, (byte) currencyLines[j].infinitesimals.length);
+//          
+//            if (i > 0 && i % 4 == 0){
+//            j += 4;
+//            }
+      //  }
     }
     
       public Texture2D makeTexture(String side){
